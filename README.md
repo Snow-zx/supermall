@@ -1,2 +1,0 @@
-# supermall
-guess supernal
