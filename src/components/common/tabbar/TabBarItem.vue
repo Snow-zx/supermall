@@ -1,14 +1,14 @@
 <template>
-  <div class="tab-bar-item" :style="activeStyle" @click="itemClick">
-    <div v-if="!isActive">
-      <slot name="item-icon"></slot>
-    </div>
-    <div v-else>
-      <slot name="item-icon-active"></slot>
-    </div>
-    <div :class="{active: isActive}"></div>
-    <slot name="item-text"></slot>
+  <div class="tab-bar-item"  @click="itemClick">
+    <div v-if="!isActive"><slot name="item-icon"></slot></div>
+    <div v-else><slot name="item-icon-active"></slot></div>
+    <div :style="activeStyle"><slot name="item-text"></slot></div>
   </div>
+<!--  <div class="tab-bar-item" @click="itemClick">-->
+<!--    <div v-if="!isActive"><slot name="item-icon"></slot></div>-->
+<!--    <div v-else><slot name="item-icon-active"></slot></div>-->
+<!--    <div :style="activeStyle"><slot name="item-text"></slot></div>-->
+<!--  </div>-->
 </template>
 
 <script>
@@ -31,25 +31,25 @@ export default {
   },
   methods:{
     itemClick(){
+      // console.log(this);
+      // console.log(this.$route); //当前激活的页面路由信息
+      // console.log(this.$router); //整体的路由信息，可以控制跳转
       this.$router.push(this.path)
     }
   }
 }
 </script>
 
-<style scoped>
+<style>
 
 
 .tab-bar-item{
-  /*height: 49px;*/
-  flex: auto;
+  height: 49px;
+  flex: 1;
   text-align: center;
   font-size: 14px;
 }
 
-.tab-bar-item img{
-  height: 24px;
-}
 .tab-bar-item img {
   height: 24px;
   width: 24px;

@@ -1,15 +1,15 @@
 <template>
 <div class="main-tab-bar">
   <TabBar>
-    <TabBarItem path="/home">
+    <TabBarItem path="/home" active-color="blue">
       <template #item-icon>
-        <img src="~assets/img/tabbar/home.svg" alt="">
+        <img src="~assets/img/tabbar/home.svg"  alt="">
       </template>
       <template #item-icon-active>
         <img src="~assets/img/tabbar/home_active.svg" alt="">
       </template>
       <template #item-text>
-        <div>首页</div>
+        <div>首页1</div>
       </template>
     </TabBarItem>
 
